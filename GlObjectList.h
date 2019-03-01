@@ -9,9 +9,10 @@
 
 class ObjectDrawList {
 public:
-    ObjectDrawList();
-    void addVertex3f(float x, float y, float z, GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB, bool addMarker);
-    std::vector<float> returnObjectList();
+    void addVertex3f(float x, float y, float z, bool addMarker);
+    void addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB);
+    std::vector<float> returnVertexArray();
+    std::vector<float> returnColorArray();
     void addVertexShape(std::vector<float> shape);   
     void DrawObject(int start, int end, GLenum DrawType);   
 private:

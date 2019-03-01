@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>GlObjectList.h</itemPath>
       <itemPath>MacOs/MacOsPlatform.h</itemPath>
+      <itemPath>Rect.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,6 +16,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>GLObjectList.cpp</itemPath>
+      <itemPath>Rect.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -54,6 +56,10 @@
       </item>
       <item path="MacOs/MacOsPlatform.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Rect.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Rect.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -82,6 +88,10 @@
       <item path="GlObjectList.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MacOs/MacOsPlatform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Rect.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Rect.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

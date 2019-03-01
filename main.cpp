@@ -1,5 +1,6 @@
 #include "MacOs/MacOsPlatform.h"
 #include "GlObjectList.h"
+#include "Rect.h"
 
 void init(int argc, char **argv)
 {
@@ -13,12 +14,37 @@ void init(int argc, char **argv)
 void GLDrawing()
 {
     //Uses my object drawing
-    ObjectDrawList g;
-    g.addVertex3f(0.25, 0.25, 0, 1.0, 1.0, 1.0, false);
-    g.addVertex3f(0.75, 0.25, 0, 1.0, 0.0, 0.0, false);
-    g.addVertex3f(0.75, 0.75, 0, 1.0, 0.0, 1.0, false);
-    g.addVertex3f(0.25, 0.75, 0, 0.0, 1.0, 1.0, false);  
-    g.DrawObject(0, 4, GL_POLYGON);   
+    ObjectDrawList c;
+    Rect r;
+    //Adding colors
+    c.addColor3f(1.0, 1.0, 1.0);
+    c.addColor3f(1.0, 0.0, 0.0);
+    c.addColor3f(1.0, 0.0, 1.0);
+    c.addColor3f(0.0, 1.0, 0.0);
+    
+    //Draws
+    r.FillRect(0.25, 0.25, 0.5, 0.5, c);
+    
+    /*std::vector<float> vert1;
+    std::vector<float> vert2;
+    std::vector<float> vert3;
+    std::vector<float> vert4;
+    vert1.push_back(1.0);
+    vert1.push_back(1.0);
+    vert1.push_back(1.0);
+    vert2.push_back(1.0);
+    vert2.push_back(0.0);
+    vert2.push_back(0.0);
+    vert3.push_back(1.0);
+    vert3.push_back(0.0);
+    vert3.push_back(1.0);
+    vert4.push_back(0.0);
+    vert4.push_back(1.0);
+    vert4.push_back(0.0);
+    
+    r.FillRect(0.25, 0.25, 0.5, 0.5, vert1, vert2, vert3, vert4);*/
+    
+    
 }
 
 void display()

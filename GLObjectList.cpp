@@ -3,24 +3,23 @@
 #include <vector>
 #include "MacOs/MacOsPlatform.h"
 
-ObjectDrawList::ObjectDrawList()
-{
-    
-};
-
-void ObjectDrawList::addVertex3f(float x, float y, float z,  GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB, bool addMarker)
+void ObjectDrawList::addVertex3f(float x, float y, float z, bool addMarker)
 {
     _verticesArray.push_back(x);
     _verticesArray.push_back(y);
     _verticesArray.push_back(z);
-    _colorArray.push_back(normalizedR);
-    _colorArray.push_back(noramlizedG);
-    _colorArray.push_back(normalizedB);
     
     if(addMarker)
     {
         _stopstartPolys.push_back(_verticesArray.size());
     }
+}
+
+void ObjectDrawList::addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB)
+{
+    _colorArray.push_back(normalizedR);
+    _colorArray.push_back(noramlizedG);
+    _colorArray.push_back(normalizedB);
 }
 
 
@@ -35,9 +34,14 @@ void ObjectDrawList::addVertexShape(std::vector<float> shape)
     _stopstartPolys.push_back(_verticesArray.size());  
 }
 
-std::vector<float> ObjectDrawList::returnObjectList()
+std::vector<float> ObjectDrawList::returnVertexArray()
 {
     return _verticesArray;
+}
+
+std::vector<float> ObjectDrawList::returnColorArray()
+{
+    return _colorArray;
 }
 
 void ObjectDrawList::DrawObject(int startI, int endI, GLenum DrawType)
