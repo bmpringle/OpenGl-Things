@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=OpenGl 1.1 Things
+PROJECTNAME=OpenGl Things
 
 # Active Configuration
 DEFAULTCONF=Debug
