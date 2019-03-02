@@ -2,6 +2,8 @@
 #include "GlObjectList.h"
 #include "Rect.h"
 
+int drawMode = 1;
+
 void init(int argc, char **argv)
 {
     glutInit(&argc, argv);
@@ -11,38 +13,66 @@ void init(int argc, char **argv)
     glutCreateWindow(argv[0]/*name here*/);  
 }
 
-void GLDrawing()
+void GLDrawing(int drawWhat)
 {
     //Uses my object drawing
-    ObjectDrawList c;
-    Rect r;
-    //Adding colors
-    c.addColor3f(1.0, 1.0, 1.0);
-    c.addColor3f(1.0, 0.0, 0.0);
-    c.addColor3f(1.0, 0.0, 1.0);
-    c.addColor3f(0.0, 1.0, 0.0);
+    switch(drawWhat)
+    {
+        case 1:
+        {
+            GLObjectList c;
+            Rect r;
     
-    //Draws
-    r.FillRect(0.25, 0.25, 0.5, 0.5, c);
+            //Adding colors
+            c.addColor3f(1.0, 1.0, 1.0);
+            c.addColor3f(1.0, 0.0, 0.0);
+            c.addColor3f(1.0, 0.0, 1.0);
+            c.addColor3f(0.0, 1.0, 0.0);
     
-    /*std::vector<float> vert1;
-    std::vector<float> vert2;
-    std::vector<float> vert3;
-    std::vector<float> vert4;
-    vert1.push_back(1.0);
-    vert1.push_back(1.0);
-    vert1.push_back(1.0);
-    vert2.push_back(1.0);
-    vert2.push_back(0.0);
-    vert2.push_back(0.0);
-    vert3.push_back(1.0);
-    vert3.push_back(0.0);
-    vert3.push_back(1.0);
-    vert4.push_back(0.0);
-    vert4.push_back(1.0);
-    vert4.push_back(0.0);
+            //Draw
+            r.FillRect(0.25, 0.25, 0.5, 0.5, c);
+            r.drawRect();
+        }
+        break;
+        
+        case 2:
+        {
+            Rect r;
     
-    r.FillRect(0.25, 0.25, 0.5, 0.5, vert1, vert2, vert3, vert4);*/
+            std::vector<float> vert1;
+            std::vector<float> vert2;
+            std::vector<float> vert3;
+            std::vector<float> vert4;
+            vert1.push_back(1.0);
+            vert1.push_back(1.0);
+            vert1.push_back(1.0);
+            vert2.push_back(1.0);
+            vert2.push_back(0.0);
+            vert2.push_back(0.0);
+            vert3.push_back(1.0);
+            vert3.push_back(0.0);
+            vert3.push_back(1.0);
+            vert4.push_back(0.0);
+            vert4.push_back(1.0);
+            vert4.push_back(0.0);
+
+            r.FillRect(0.25, 0.25, 0.5, 0.5, vert1, vert2, vert3, vert4);
+            r.drawRect();
+        }
+        break;
+        case 3:
+        {
+            Rect r;
+    
+            r.FillRect(0.25, 0.25, 0.5, 0.5);
+            r.changeVertexColor(0.25, 0.75, 0.4, 1);
+            r.drawRect();
+        }
+        break;
+        
+    }
+    
+    
     
     
 }
@@ -52,13 +82,13 @@ void display()
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glClear(GL_COLOR_BUFFER_BIT);    
     glOrtho(0, 1, 0, 1, -1, 1);
-    GLDrawing();
+    GLDrawing(drawMode);
     glFlush();
 }
 
 void reshape(int w, int h)
 {  
-    GLDrawing();
+    GLDrawing(drawMode);
     glFlush();
 }
 

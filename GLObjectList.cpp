@@ -3,7 +3,7 @@
 #include <vector>
 #include "MacOs/MacOsPlatform.h"
 
-void ObjectDrawList::addVertex3f(float x, float y, float z, bool addMarker)
+void GLObjectList::addVertex3f(float x, float y, float z, bool addMarker)
 {
     _verticesArray.push_back(x);
     _verticesArray.push_back(y);
@@ -15,15 +15,20 @@ void ObjectDrawList::addVertex3f(float x, float y, float z, bool addMarker)
     }
 }
 
-void ObjectDrawList::addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB)
+void GLObjectList::addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB)
 {
     _colorArray.push_back(normalizedR);
     _colorArray.push_back(noramlizedG);
     _colorArray.push_back(normalizedB);
 }
 
+void GLObjectList::colorArrayClean()
+{
+    _colorArray.clear();
+}
 
-void ObjectDrawList::addVertexShape(std::vector<float> shape)
+
+void GLObjectList::addVertexShape(std::vector<float> shape)
 {
     int shapeSize = shape.size();
     for(int i = 0; shapeSize>i ; ++i)
@@ -34,17 +39,17 @@ void ObjectDrawList::addVertexShape(std::vector<float> shape)
     _stopstartPolys.push_back(_verticesArray.size());  
 }
 
-std::vector<float> ObjectDrawList::returnVertexArray()
+std::vector<float> GLObjectList::returnVertexArray()
 {
     return _verticesArray;
 }
 
-std::vector<float> ObjectDrawList::returnColorArray()
+std::vector<float> GLObjectList::returnColorArray()
 {
     return _colorArray;
 }
 
-void ObjectDrawList::DrawObject(int startI, int endI, GLenum DrawType)
+void GLObjectList::DrawObject(int startI, int endI, GLenum DrawType)
 {
     glBegin(DrawType);
     for(int i=0; i<(endI-startI)*3; ++i)
@@ -56,5 +61,3 @@ void ObjectDrawList::DrawObject(int startI, int endI, GLenum DrawType)
     }
     glEnd();
 }
-
-

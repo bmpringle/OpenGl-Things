@@ -10,4 +10,3 @@
 
 
 #endif /* MACOSPLATFORM_H */
-

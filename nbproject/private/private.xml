@@ -7,10 +7,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/bmp/NetBeansProjects/OpenGl%201.1%20Things/MacOs/MacOsPlatform.h</file>
-            <file>file:/Users/bmp/NetBeansProjects/OpenGl%201.1%20Things/main.cpp</file>
-            <file>file:/Users/bmp/NetBeansProjects/OpenGl%201.1%20Things/GlObjectList.h</file>
-            <file>file:/Users/bmp/NetBeansProjects/OpenGl%201.1%20Things/GLObjectList.cpp</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/GLObjectList.cpp</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/main.cpp</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/Rect.cpp</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/MacOs/MacOsPlatform.h</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/Rect.h</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/GlObjectList.h</file>
+            <file>file:/Users/bmp/NetBeansProjects/OpenGl%20Things/Makefile</file>
         </group>
     </open-files>
 </project-private>

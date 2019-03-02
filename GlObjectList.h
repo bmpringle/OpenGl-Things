@@ -7,7 +7,7 @@
 
 
 
-class ObjectDrawList {
+class GLObjectList {
 public:
     void addVertex3f(float x, float y, float z, bool addMarker);
     void addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB);
@@ -15,6 +15,7 @@ public:
     std::vector<float> returnColorArray();
     void addVertexShape(std::vector<float> shape);   
     void DrawObject(int start, int end, GLenum DrawType);   
+    void colorArrayClean();
 private:
     std::vector<float> _verticesArray;
     std::vector<GLfloat> _colorArray;
@@ -26,4 +27,3 @@ private:
 #endif
 
 #endif 
-
