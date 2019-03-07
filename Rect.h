@@ -15,10 +15,11 @@ public:
    void FillRect(float normX, float normY, float nWidth, float nHeight, GLObjectList colors);
    void FillRect(float normX, float normY, float nWidth, float nHeight);
    void drawRect();
-   void changeVertexColor(GLfloat red, GLfloat green, GLfloat blue, int vertex);
+   void setVertexColor(GLfloat red, GLfloat green, GLfloat blue, int vertex);
+   void setRectColor(GLfloat red, GLfloat green, GLfloat blue);
 private:
     //Draw Object
-    GLObjectList g;
+    GLObjectList GLo;
 };
 
 #endif

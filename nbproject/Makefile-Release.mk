@@ -37,7 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/GLObjectList.o \
 	${OBJECTDIR}/Rect.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/RegularPolygon.o \
+	${OBJECTDIR}/WindowVars.o \
+	${OBJECTDIR}/main1.1.o
 
 
 # C Compiler Flags
@@ -74,10 +76,20 @@ ${OBJECTDIR}/Rect.o: Rect.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Rect.o Rect.cpp
 
-${OBJECTDIR}/main.o: main.cpp
+${OBJECTDIR}/RegularPolygon.o: RegularPolygon.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RegularPolygon.o RegularPolygon.cpp
+
+${OBJECTDIR}/WindowVars.o: WindowVars.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/WindowVars.o WindowVars.cpp
+
+${OBJECTDIR}/main1.1.o: main1.1.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main1.1.o main1.1.cpp
 
 # Subprojects
 .build-subprojects:

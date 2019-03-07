@@ -17,6 +17,7 @@ void GLObjectList::addVertex3f(float x, float y, float z, bool addMarker)
 
 void GLObjectList::addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB)
 {
+            
     _colorArray.push_back(normalizedR);
     _colorArray.push_back(noramlizedG);
     _colorArray.push_back(normalizedB);
@@ -25,6 +26,11 @@ void GLObjectList::addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat 
 void GLObjectList::colorArrayClean()
 {
     _colorArray.clear();
+}
+
+void GLObjectList::vertexArrayClean()
+{
+    _verticesArray.clear();
 }
 
 
@@ -52,10 +58,11 @@ std::vector<float> GLObjectList::returnColorArray()
 void GLObjectList::DrawObject(int startI, int endI, GLenum DrawType)
 {
     glBegin(DrawType);
+    
     for(int i=0; i<(endI-startI)*3; ++i)
-    {
-    glColor3f(_colorArray.at(startI+i), _colorArray.at(startI+i+1), _colorArray.at(startI+i+2));
-    glVertex3f(_verticesArray.at(startI+i), _verticesArray.at(startI+i+1), _verticesArray.at(startI+i+2));
+    {       
+        glColor3f(_colorArray.at(startI+i), _colorArray.at(startI+i+1), _colorArray.at(startI+i+2)); 
+        glVertex3f(_verticesArray.at(startI+i), _verticesArray.at(startI+i+1), _verticesArray.at(startI+i+2)); 
      ++i;
      ++i;
     }

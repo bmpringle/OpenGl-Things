@@ -16,6 +16,7 @@ public:
     void addVertexShape(std::vector<float> shape);   
     void DrawObject(int start, int end, GLenum DrawType);   
     void colorArrayClean();
+    void vertexArrayClean();
 private:
     std::vector<float> _verticesArray;
     std::vector<GLfloat> _colorArray;
@@ -26,4 +27,5 @@ private:
 
 #endif
 
-#endif 
+#endif	// 
+
