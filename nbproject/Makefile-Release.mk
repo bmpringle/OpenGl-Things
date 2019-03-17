@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/CircleShape.o \
 	${OBJECTDIR}/GLObjectList.o \
 	${OBJECTDIR}/Rect.o \
 	${OBJECTDIR}/RegularPolygon.o \
@@ -65,6 +66,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl_things: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl_things ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/CircleShape.o: CircleShape.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CircleShape.o CircleShape.cpp
 
 ${OBJECTDIR}/GLObjectList.o: GLObjectList.cpp
 	${MKDIR} -p ${OBJECTDIR}

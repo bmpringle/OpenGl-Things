@@ -10,12 +10,13 @@ class RegularPolygon:GLObjectList
 {
 public:
     RegularPolygon(int sides, int sideLength, int centerX, int centerY);
+    RegularPolygon(float radius, int centerX, int centerY);
     void DrawPolygon();
     void setVertexColor(GLfloat red, GLfloat green, GLfloat blue, int vertex);
     void setPolygonColor(GLfloat red, GLfloat green, GLfloat blue);
 private:
     GLObjectList GLo;
-    int radius;
+    float radius;
     int sidesI;
     float degs;
     float rads;

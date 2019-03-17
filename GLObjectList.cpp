@@ -2,22 +2,17 @@
 #include <iostream>
 #include <vector>
 #include "MacOs/MacOsPlatform.h"
+#include <math.h>
 
-void GLObjectList::addVertex3f(float x, float y, float z, bool addMarker)
+void GLObjectList::addVertex3f(float x, float y, float z)
 {
     _verticesArray.push_back(x);
     _verticesArray.push_back(y);
-    _verticesArray.push_back(z);
-    
-    if(addMarker)
-    {
-        _stopstartPolys.push_back(_verticesArray.size());
-    }
+    _verticesArray.push_back(z);   
 }
 
 void GLObjectList::addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB)
-{
-            
+{        
     _colorArray.push_back(normalizedR);
     _colorArray.push_back(noramlizedG);
     _colorArray.push_back(normalizedB);
@@ -56,11 +51,11 @@ std::vector<float> GLObjectList::returnColorArray()
 }
 
 void GLObjectList::DrawObject(int startI, int endI, GLenum DrawType)
-{
+{        
     glBegin(DrawType);
     
     for(int i=0; i<(endI-startI)*3; ++i)
-    {       
+    {   
         glColor3f(_colorArray.at(startI+i), _colorArray.at(startI+i+1), _colorArray.at(startI+i+2)); 
         glVertex3f(_verticesArray.at(startI+i), _verticesArray.at(startI+i+1), _verticesArray.at(startI+i+2)); 
      ++i;

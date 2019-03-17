@@ -11,10 +11,30 @@ RegularPolygon::RegularPolygon(int sides, int sideLength, int centerX, int cente
 
     for(int i=0; i<sides; ++i)
     {
-        GLo.addVertex3f(centerX+radius*cos(rads*(i+1)), centerY+radius*sin(rads*(i+1)), 0, false);
+        GLo.addVertex3f(centerX+radius*cos(rads*(i+1)), centerY+radius*sin(rads*(i+1)), 0);
     }
     
     for(int i=0; i<sides; ++i)
+    {
+        GLo.addColor3f(1, 1, 1);
+    }
+    
+    
+}
+
+RegularPolygon::RegularPolygon(float radiusIn, int centerX, int centerY)
+{    
+    sidesI = (int) radiusIn;
+    radius = radiusIn;
+    degs = 360/radius;
+    rads=degs*M_PI/180;
+
+    for(int i=0; i<radius; ++i)
+    {
+        GLo.addVertex3f(centerX+radius*cos(rads*(i+1)), centerY+radius*sin(rads*(i+1)), 0);
+    }
+    
+    for(int i=0; i<radius; ++i)
     {
         GLo.addColor3f(1, 1, 1);
     }

@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="common" projectFiles="true">
+        <itemPath>CircleShape.h</itemPath>
         <itemPath>GlObjectList.h</itemPath>
         <itemPath>Rect.h</itemPath>
         <itemPath>RegularPolygon.h</itemPath>
@@ -22,6 +23,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Engine" projectFiles="true">
+        <itemPath>CircleShape.cpp</itemPath>
         <itemPath>GLObjectList.cpp</itemPath>
         <itemPath>Rect.cpp</itemPath>
         <itemPath>RegularPolygon.cpp</itemPath>
@@ -62,6 +64,10 @@
           <commandLine>-framework OpenGL -framework GLUT</commandLine>
         </linkerTool>
       </compileType>
+      <item path="CircleShape.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CircleShape.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="GLObjectList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GlObjectList.h" ex="false" tool="3" flavor2="0">
@@ -103,6 +109,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="CircleShape.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CircleShape.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="GLObjectList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GlObjectList.h" ex="false" tool="3" flavor2="0">

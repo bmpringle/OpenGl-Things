@@ -9,7 +9,7 @@
 
 class GLObjectList {
 public:
-    void addVertex3f(float x, float y, float z, bool addMarker);
+    void addVertex3f(float x, float y, float z);
     void addColor3f(GLfloat normalizedR, GLfloat noramlizedG, GLfloat normalizedB);
     std::vector<float> returnVertexArray();
     std::vector<float> returnColorArray();

@@ -3,8 +3,9 @@
 #include "Rect.h"
 #include "WindowVars.h"
 #include "RegularPolygon.h"
+#include "CircleShape.h"
 
-int drawMode = 3;
+int drawMode = 4;
 WindowVars gWindowVars(0, 0);
 
 void setScreenVar(int x, int y)
@@ -66,7 +67,9 @@ void GLDrawing(int drawWhat)
         break;
         case 4:
         {
-                   
+            CircleShape c(160, 700, 700);
+            c.setColor(2, 99, 255);
+            c.drawCircle();
         }
         
     }  
