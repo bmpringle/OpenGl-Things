@@ -1,6 +1,7 @@
 #include <vector>
 #include "MacOs/MacOsPlatform.h"
 #include "GlObjectList.h"
+
 #ifndef RECT_H
 #define RECT_H
 
@@ -17,6 +18,9 @@ public:
    void drawRect();
    void setVertexColor(GLfloat red, GLfloat green, GLfloat blue, int vertex);
    void setRectColor(GLfloat red, GLfloat green, GLfloat blue);
+   std::vector<float> returnVertexArray();
+    bool compareWith(std::vector<float> v);
+   
 private:
     //Draw Object
     GLObjectList GLo;

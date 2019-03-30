@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/BoundingBox2D.o \
 	${OBJECTDIR}/CircleShape.o \
 	${OBJECTDIR}/GLObjectList.o \
 	${OBJECTDIR}/Rect.o \
@@ -66,6 +67,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl_things: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl_things ${OBJECTFILES} ${LDLIBSOPTIONS} -framework OpenGL -framework GLUT
+
+${OBJECTDIR}/BoundingBox2D.o: BoundingBox2D.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -w -I/System/Library/Frameworks -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BoundingBox2D.o BoundingBox2D.cpp
 
 ${OBJECTDIR}/CircleShape.o: CircleShape.cpp
 	${MKDIR} -p ${OBJECTDIR}

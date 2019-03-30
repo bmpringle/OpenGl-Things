@@ -1,6 +1,7 @@
 #include <vector>
 #include "MacOs/MacOsPlatform.h"
 #include "GlObjectList.h"
+#include "BoundingBox2D.h"
 #ifndef REGULARPOLYGON_H
 #define REGULARPOLYGON_H
 
@@ -14,6 +15,8 @@ public:
     void DrawPolygon();
     void setVertexColor(GLfloat red, GLfloat green, GLfloat blue, int vertex);
     void setPolygonColor(GLfloat red, GLfloat green, GLfloat blue);
+    bool compareWith(std::vector<float> v);
+    std::vector<float> returnVertexArray();
 private:
     GLObjectList GLo;
     float radius;

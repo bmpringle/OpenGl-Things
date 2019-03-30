@@ -103,3 +103,17 @@ void Rect::drawRect()
     GLo.DrawObject(0, 4, GL_POLYGON);  
 }
 
+
+
+std::vector<float> Rect::returnVertexArray()
+{
+    return GLo.returnVertexArray();
+}
+
+bool Rect::compareWith(std::vector<float> v)
+{
+        BoundingBox2D a(v);
+        BoundingBox2D b(returnVertexArray());
+        
+        return a.isCollision(b);
+}

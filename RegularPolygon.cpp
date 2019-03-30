@@ -1,4 +1,4 @@
-
+#include "MacOs/MacOsPlatform.h"
 #include "RegularPolygon.h"
 #include <math.h>
 
@@ -78,4 +78,17 @@ void RegularPolygon::setPolygonColor(GLfloat red, GLfloat green, GLfloat blue)
         GLo.addColor3f(r, g, b);
       
     }
+}
+
+std::vector<float> RegularPolygon::returnVertexArray()
+{
+    return GLo.returnVertexArray();
+}
+
+bool RegularPolygon::compareWith(std::vector<float> v)
+{
+        BoundingBox2D a(v);
+        BoundingBox2D b(returnVertexArray());
+        
+        return a.isCollision(b);
 }

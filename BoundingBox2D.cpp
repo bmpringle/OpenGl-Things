@@ -25,13 +25,13 @@ BoundingBox2D::BoundingBox2D(std::vector<float> objectVertexes)
         }
     }
     
-    for(int i=0; i<(objectVertexes.size()-1)/3; ++i)
+    for(int i=0; i<objectVertexes.size()/3-2; ++i)
     {
         if(i==0)
         {
             maxY = std::max(objectVertexes.at(1), objectVertexes.at(4));
         }else{
-            maxY = std::max(maxX, objectVertexes.at(3*(i+2)));
+            maxY = std::max(maxY, objectVertexes.at(3*(i+1)+1));
         }
     }
     
@@ -45,13 +45,13 @@ BoundingBox2D::BoundingBox2D(std::vector<float> objectVertexes)
         }
     }
     
-    for(int i=0; i<(objectVertexes.size()-1)/3; ++i)
+    for(int i=0; i<(objectVertexes.size())/3-2; ++i)
     {
         if(i==0)
         {
             minY = std::min(objectVertexes.at(1), objectVertexes.at(4));
         }else{
-            minY = std::min(maxX, objectVertexes.at(3*(i+2)));
+            minY = std::min(minY, objectVertexes.at(3*(i+1)+1));
         }
     }
 
@@ -59,20 +59,6 @@ BoundingBox2D::BoundingBox2D(std::vector<float> objectVertexes)
     maxYI=maxY;
     minXI=minX;
     minYI=minY;
-    
-    boundingBox.push_back(minX);
-    boundingBox.push_back(minY);
-    boundingBox.push_back(maxX);
-    boundingBox.push_back(minY);
-    boundingBox.push_back(maxX);
-    boundingBox.push_back(maxY);
-    boundingBox.push_back(minX);
-    boundingBox.push_back(maxY);
-}
-
-std::vector<float> BoundingBox2D::returnBoundingBox()
-{
-    return boundingBox;
 }
 
 bool BoundingBox2D::isCollision(BoundingBox2D BoundingObjB)

@@ -2,7 +2,9 @@
 #include <iostream>
 #include <vector>
 #include "MacOs/MacOsPlatform.h"
+#include "Rect.h"
 #include <math.h>
+#include "BoundingBox2D.h"
 
 void GLObjectList::addVertex3f(float x, float y, float z)
 {
@@ -62,4 +64,13 @@ void GLObjectList::DrawObject(int startI, int endI, GLenum DrawType)
      ++i;
     }
     glEnd();
+}
+
+
+bool GLObjectList::compareWith(std::vector<float> v)
+{
+        BoundingBox2D a(v);
+        BoundingBox2D b(returnVertexArray());
+        
+        return a.isCollision(b);
 }

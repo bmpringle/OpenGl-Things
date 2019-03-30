@@ -4,9 +4,15 @@
 #include "WindowVars.h"
 #include "RegularPolygon.h"
 #include "CircleShape.h"
+#include <thread>
+#include <chrono>
+#include <vector>
+#include "BaseObject.h"
 
-int drawMode = 4;
+int drawMode = 3;
+int fps = 30;
 WindowVars gWindowVars(0, 0);
+std::vector<CircleShape> circleShapes;
 
 void setScreenVar(int x, int y)
 {
@@ -15,6 +21,7 @@ void setScreenVar(int x, int y)
 
 void init(int argc, char **argv)
 {
+    
     int w = 1920;
     int h = 1155;
     glutInit(&argc, argv);
@@ -35,10 +42,10 @@ void GLDrawing(int drawWhat)
             Rect r;
     
             r.FillRect(100, 200, 300, 400);
-            r.setVertexColor(35, 175, 230, 1);
-            r.setVertexColor(125, 185, 135, 2);
-            r.setVertexColor(50, 50, 50, 3);
-            r.setVertexColor(150, 90, 75, 4);
+            r.setVertexColor(255, 35, 0, 1);
+            r.setVertexColor(123, 200, 12, 2);
+            r.setVertexColor(255, 20, 147, 3);
+            r.setVertexColor(255, 0, 255, 4);
             r.drawRect();
         }
         break;
@@ -67,9 +74,23 @@ void GLDrawing(int drawWhat)
         break;
         case 4:
         {
-            CircleShape c(160, 700, 700);
+            CircleShape c(500, 1000, 300);
             c.setColor(2, 99, 255);
             c.drawCircle();
+            CircleShape c1(500, 500, 300);
+            c1.setColor(2, 255, 1);
+            c1.drawCircle(); 
+            circleShapes.push_back(c);
+            circleShapes.push_back(c1);
+            std::cout << c.compareWith(c1.returnVertexArray()); 
+            
+            
+            RegularPolygon p(3, 200, 900, 600);
+            RegularPolygon p1(10, 100, 100, 600);
+            p.setPolygonColor(255, 255, 255);
+            p1.setPolygonColor(255, 100, 0);
+            p.DrawPolygon();
+            p1.DrawPolygon();
         }
         
     }  
@@ -111,7 +132,7 @@ int main(int argc, char **argv)
    glutDisplayFunc(display);
    glutKeyboardFunc(keyboard);
    glutMainLoop();
-   
+       
    return 0;
 }
 

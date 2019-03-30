@@ -1,3 +1,11 @@
+#include "MacOs/MacOsPlatform.h"
+#include "CircleShape.h"
+#include "GlObjectList.h"
+#include "Rect.h"
+#include "RegularPolygon.h"
+#include "BoundingBox2D.h"
+#include <vector>
+
 #ifndef WINDOWVARS_H
 #define WINDOWVARS_H
 
